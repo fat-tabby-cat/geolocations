@@ -20,3 +20,5 @@ motorways.to_file("/home/fattabby/下載/motorways.shp")
 #%%if motorways sliced ok, please do below
 motorways=gpd.read_file("/home/fattabby/下載/motorways.shp")
 
+shenhai_expway=motorways[motorways['name'] == '沈海高速']
+shenhai_expway.to_file("/home/fattabby/下載/shenhai_expway.shp")
