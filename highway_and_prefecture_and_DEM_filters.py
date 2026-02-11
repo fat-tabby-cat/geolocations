@@ -5,6 +5,7 @@ Created on Wed Feb 11 22:57:05 2026
 
 @author: fattabby
 """
+#圖資來源：政府開放資料（細節待補）
 import geopandas as gpd
 twn_boundary=gpd.read_file("/home/fattabby/下載/villages/VILLAGE_NLSC_11401031.shp")
 boundary_list=['臺北市', '新北市','宜蘭縣','桃園市','基隆市']
