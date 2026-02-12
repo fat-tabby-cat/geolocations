@@ -33,6 +33,18 @@ Cell In[19], line 1
 
 AttributeError: property 'wkt' of 'LineString' object has no setter
 '''
+'''
+以下是正確的語法，參考自
+# Source - https://stackoverflow.com/a/61658263
+# Posted by martinfleis, modified by community. See post 'Timeline' for change history
+# Retrieved 2026-02-12, License - CC BY-SA 4.0
+
+from shapely.wkt import loads
+
+string = 'MULTIPOLYGON (((37.2905 55.80199, 37.29542 55.803, 37.29663 55.8032, 37.29777 55.80335, 37.29864 55.80345, 37.29969 55.80352, 37.30356 55.80356, 37.30327 55.80318, 37.30292 55.80248, 37.30278 55.80127, 37.30235 55.79863, 37.29822 55.79763, 37.29447 55.79672, 37.29441 55.79679, 37.29412 55.79671, 37.29417 55.79663, 37.29321 55.79641, 37.29326 55.79806, 37.2905 55.80199)))'
+geom = loads(string)
+df.loc[145, 'geometry'] = geom
+'''
 from shapely.wkt import loads
 geom = loads(linestring_new)
 print("before", hangzhou_wenzhou_hs2.iloc[0].geometry.wkt)
